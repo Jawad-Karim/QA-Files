@@ -1,0 +1,3 @@
+* how to stop un-wanted browser notifications
+1. open browser click(3 dots)-settings - cookies and site permissions - notifications - Allow - (3dots) - Block.
+2. additional tips: https://www.mcafee.com/support/s/article/000001899?language=en_US

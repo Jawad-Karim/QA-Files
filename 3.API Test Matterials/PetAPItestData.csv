@@ -1,0 +1,5 @@
+endPoint,petID,categoryID,categoryName,petName,photoLinks,tagID,tagName,status
+v2/pet,1011,203,persian white,Jigo,https://www.persiancat.com,21,cat,avaiable
+v2/pet,1012,204,persian brown,Jigo,https://www.persiancat.com,22,cat,pending
+v2/pet,1013,205,persian grey,Jigo,https://www.persiancat.com,23,cat,sold
+v2/pet,1014,206,persian,Jigo,https://www.persiancat.com,24,cat,n/a

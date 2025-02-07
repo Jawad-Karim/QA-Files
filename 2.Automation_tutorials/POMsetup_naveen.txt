@@ -1,0 +1,34 @@
+By bhanu Prathap:
+project: name
+Packages:
+=> HeleperPacks
+-browserConfig
+-select
+-alert
+-javaScripts
+-wait
+-window
+-assertion
+-generic
+-excell
+-logger
+
+=> testBasePacks
+-TestBaseClass
+
+=> pageObject
+=> utility
+=> testScripts
+=> resources
+
+
+By Naveen:
+scr.main/java => pacakages: 
+com.crm.pagesPack: LoginPage class, signUpPage, HomePage, contactPage, DealsPage 
+base: BaseClass, 
+configPack:  config file(config.properties-url, uid, pass),
+testData, 
+utility, 
+
+
+src.test/java => packages: com.test.cases,

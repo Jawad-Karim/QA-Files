@@ -1,0 +1,160 @@
+******************** Framworks Designs **************************************************************************
+
+========== TestNG_Hybrid Framework _______Ar_motto ============
+:create a new project (projectName)
+:add dependencies- selenium-java, testng, poi-ooxml-schemas, poi-ooxml, poi, extentreports, lombok
+:pluggins- maven-surefire-plugin
+
+:src/main/java
+packages
+------------------------------------
+pages 	  (classes- HomePage, RegisterPage, LoginPage, AccountPage, AccountSuccessPage, SearchPage)
+utils 	  (classes- BrowserFactory, ExtentReportManager, ExcelReader, configReader, TakeScreenShot, elementUtils...)
+listeners (classes- MyListeners implements ITestListener, MyRetry implements IRetryAnalyzer)
+
+:src/main/resources
+------------------------------------
+
+:src/test/java
+packages
+-------------------------------------
+testBase  (classes- Base)
+testCases (classes- HomePageTest, RegisterPageTest, LoginPageTest, AccountPageTest, AccountSuccessPageTest, SearchPageTest)
+
+
+:src/test/resources
+folders
+----------------------------------------------------------------
+testData- userTestData.xlsx
+configData- config.properties
+
+:folders under project-
+-------------------------------------------------------------
+screenshots
+reports
+xmlFiles(testng.xml)
+
+*******************************************************************************************************************
+
+
+
+========== Cucumber Framework ____Ar_motto ============
+:create a new project (projectName)
+:add dependencies- selenium-java, cucumber-java, cucumber-junit/testng, cucumber-core, juni/testng, poi-ooxml-schemas, poi-ooxml, poi, 
+extentreports, lombok, extentreports-cucumber7-adapter, commons-io
+
+:src/main/java
+packages
+-------------------------------------------------------
+pages 	(classes- HomePage, RegisterPage, LoginPage, AccountPage, AccountSuccessPage, SearchPage)
+utils 	(classes- BrowserFactory, ExtentReportManager, ExcelReader, TakeScreenShot...)
+
+
+:src/main/resources
+-------------------------
+
+:src/test/java
+packages
+----------------------------------------------------------------
+hooks   	(classes- MyHooks)
+runners 	(classes- MyTestRunner, FailedTestRunner)
+stepDefinitions (classes- HomePageSteps, RegisterSteps, LoginSteps, AccountSteps, AccountSuccessSteps, SearchPageSteps)
+
+
+:src/test/resources
+folders
+----------------------------------------------------------------
+testData- userTestData.xlsx
+configData- config.properties
+features- Login.feature, Register.feature, Search.feature
+
+:folders under project-
+-------------------------------------------------------------
+screenshots
+reports
+xmlFiles(testng.xml)
+
+
+*********************************************************************************************************
+
+========== RestAssured_TestNG_Framework_ _______RhlArora ============
+:create a new project (projectName)
+:add dependencies- selenium-java, restassured, testng, poi-ooxml-schemas, poi-ooxml, poi, extentreports, mail, json, jackson-databind.
+:pluggins- maven-surefire-plugin
+
+:src/main/java
+packages
+------------------------------------
+apis	  (classes- CreateUserApi, RetrieveUserApi, UpdateUserApi, DeleteUserApi)
+listeners (classes- class MyListeners extends TestBase implements ITestListener...)
+pojos 	  (Classes- UserPojo, AddressPojo...)
+utils 	  (ExcelReader, ConfigDataReader, TestDataProvider, ExtentReportManager, ScreenshotTaker)
+testBase  (classes- TestBase)
+
+:src/main/resources
+-------------------------
+
+:src/test/java
+packages
+----------------------------------------------------------------
+testCases (classes- ValidateCreateUserApi, ValidateRetrieveUserApi, ValidateUpdateUserApi, ValidateDeleteUserApi)
+
+
+:src/test/resources
+folders
+----------------------------------------------------------------
+testData- userTestData.xlsx
+configData- config.properties, ExtentReportConfig
+
+
+:folders under project-
+-------------------------------------------------------------
+screenshots
+reports
+xmlFiles(testng.xml)
+
+
+
+************************************************************************************************************
+
+========== RestAssured_Cucumber_Framework________RhlArora ============
+:create a new project (projectName)
+:add dependencies- selenium-java, testng, poi-ooxml-schemas, poi-ooxml, poi, extentreports, mail, json, jackson-databind.
+:pluggins- maven-surefire-plugin
+
+:src/main/java
+packages
+------------------------------------
+apis	  	(classes- CreateUserApi, RetrieveUserApi, UpdateUserApi, DeleteUserApi)
+stepDefinitions (classes- CreateUserApiStep, RetrieveUserApiStep, UpdateUserApiStep, DeleteUserApiStep)
+listeners 	(classes- class MyListeners extends TestBase implements ITestListener...)
+pojos 		(Classes- UserPojo, AddressPojo...)
+utils 		(ExcelReader, ConfigDataReader, TestDataProvider, ExtentReportManager, ScreenshotTaker)
+testBase 	(classes- TestBase)
+
+:src/main/resources
+-------------------------
+
+:src/test/java
+packages
+----------------------------------------------------------------
+testRunner (classes- CreateUserRunner, RetrieveUserRunner, UpdateUserRunner, DeleteUserRunner)
+
+
+:src/test/resources
+folders
+----------------------------------------------------------------
+featureFiles- CreateUserApi.feature, RetrieveUserApi.feature, UpdateUserApi.feature, DeleteUserApi.feature
+testData- userTestData.xlsx
+configData- config.properties, ExtentReportConfig
+
+
+:folders under project-
+-------------------------------------------------------------
+reports
+xmlFiles(testng.xml)
+
+****************************************************************************************************************
+
+
+

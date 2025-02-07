@@ -1,0 +1,76 @@
+SNT - Agile ALM for Manual testing.
+=======================================
+
+1. how to create an New Organization in Agile ALM ?
+first I need to create an account and login. 
+then click on the My Profile drop down > click on My Organizations.
+then click on New Organization > do name (TS4U) for new Organization and put a description > save.
+then new created organization will be available on my organizaion page.
+
+2. how to create a new project ?
+first I need to create a new Project(if not already created).
+to create a Project click on my organizations > select orgainzation 
+> Create Project > select template > do name (E-Commerce Project) and description > create.
+then project will be available inside the organization.
+
+* how to create User story ?
+Work Item > new Work Item > user story > title, description > save.
+go to link > child > link all the TC > save.
+
+
+3. how to create a test plan ?
+go to project > manual test plan > test plans > new Test Plan > select Iteration, description, Priority, Risk.
+we can create a new test plan for the Project by clicking on the new Test Plan. 
+(do name web application, mobile application, TS4U Front-end, back-end, database, or api etc.)
+
+Under a test create Test Suites like functional, smoke, sanity, regression test suite etc.
+Under a Test Test Suite we can create multiple Test Scenarios like Buyer Register, login, forgot password, Catagories, Campain etc.
+Under a Test Scenario we can create multiple test cases. like positive, negative test cases folder
+Under the TC folder I create the test cases, specify Test Case Title, assign to, add a template, steps, parameters.
+Test Case ID, Test Scenario, Test Case Title, Pre-requisites, Test Steps, Test Data, Expected Result, Actual Result, Priority, Status, Comments
+
+
+first we need to create test case template and configurations then we can create test plan.
+
+* before Execution we need to asign a configuration- action > asign configuration > select a configuration > save.
+* Execution- click Execute > select a test case > run selected test case > mark (tick) for pass and (x) for fail.
+
+4. how to create test case template ?
+we can create different TC templates for Web App, Mob App, TS4U Front-end, back-end, database, or api etc.
+go to project > test case template > new template > do name & description 
+> add fields (user story, pre-requisite, steps, test data, expected result, actual result, comment, attachments) > save. OR
+Test Case ID, Test Scenario, Test Case Title, Pre-requisites, Test Steps, Test Data, 
+Expected Result, Actual Result, Priority, Status, Comments
+
+
+* how to insert a step to a test case from another test case ?
+: go to action tab > click on icon *|* in test case > select steps > insert > save.
+
+5. how to create test configuration ?
+Create Configuration for Web App, Mob App, TS4U Front-end, back-end, database, or api etc
+create configuration variables Operating System, mobile OS, Browser, Browser version.
+go to project > Test Configuration > create new variables(do name, description, set values) > save.
+then New Configuration > do name, description, select variables + values> 
+
+6. Test Runs: display the test cases been run, we can get in specific TC and result
+
+7. Progress Report: display the status of the test cases been run like how many pass, fail, blocked etc.
+
+
+=============== User Stories ===================
+1. As a Customer
+I want to Login to my account using user name and password
+So that I can parchase a product.
+Acceptance Criteria –
+• System must validate the user name and password
+• In case Customer enters wrong password three times then the system should blocks the account
+
+2. As a Customer
+I want to to search and add one or more items to the cart 
+So that I can pay for the added products.
+Acceptance Criteria –
+• product individual and total price shoul be displaid under cart.
+• user should be able to pay by debit or credit card.
+
+
+

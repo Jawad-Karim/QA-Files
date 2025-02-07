@@ -1,0 +1,149 @@
+# copy data : Ctrl+c
+# copy path : Shift+Right click
+# paste	: Ctrl+v
+# type few letters then Ctrl+space (you will get the complete statement)
+# System.out.print... : type syso then Ctrl+space.
+# create main method : type main+Ctrl+space  
+# For single line java code comment and uncomment : Ctrl + / (Forward Slash)
+# For multiple line java code comment : Ctrl + Shift + / (Forward Slash)
+# Text alignment : Ctrl+a then Ctrl+i or Ctrl+Shift+F for format...
+# to get all relavent imports : Ctrl+Shift+o
+# snipping tool : Windows + Shift + S
+# java code formating : Ctrl + Shift + f
+# delete a line in eclipse : put the cursor in the line then Ctrl + D.
+
+*************************** conditional formatting status column in Excel ********************************************************
+Select status column > conditional formatting > Highlight Cell Rules > Equal To > Custom Format > write(PASS) Fill > select color(GREEN) > OK.
+: Select status column > conditional formatting > Highlight Cell Rules > Equal To > Custom Format > write(FAIL) Fill > select color(RED) > OK.
+: Select status column > conditional formatting > Highlight Cell Rules > Equal To > Custom Format > write(NOT RUN) Fill > select color(YELLO) > OK.
+
+*** format status column for data validation in Excel 
+: Select status column > DATA > data validation > Settings > allow(List) > Source(PASS, FAIL, NOT RUN) > OK.
+
+*** freeze the column in Excel
+: view > Freeze pence > Freeze Top_Row/ First_Column.
+
+************************************** eclipse issues ************************************************************************
+** unable to open eclipse (it happens when you have multiple jdk downloaded in your machine)
+: Solution- ecliples folder > right click on eclipse icon > open with wordpad > 
+: after openFile line > delete (--launcher.appendVmargs) > type -vm then in next line copy&paste javaw.exe path(C:\Program Files\Java\jdk-21\bin\javaw.exe)
+: OR delete other old jdks from your machine
+** corrupted eclipse
+: Solution: close eclipse > go to eclipse-workspace > delete (.metadata)folder > then start eclipse OR
+: delete and re-install eclipse(don't delete eclipse-workspace) then create & use a new eclipse work space.
+
+************************************** Computer and Eclipse issues *******************************************************
+** unwanted popup when open a browser
+: Solution- open browser > Settings > Coockies and Site permissoins > All permissions > Notifications > add > copy & paste the website > save.
+
+************************** testNG issue ******************************
+A: make sure testNG version installed in eclipse and in pom dependency are same.
+
+** how to setup localhost..
+A: go to control panel- programm features- turn window feature on or off- select internet information service
+- ok - close... now add jenkins to localhost= copy jenkins war file - goto (c) - inetpub - wwwroot - paste...
+
+************************** Java Maven Trouble shooting *******************************************************
+
+** Java JDK or Jre compiler issues
+Solution: 
+1. project property > build path > Libraries > remove old jdk & add Library(JDK-17 or installed JDK version) > apply.
+2. add maven compiler to POM > add in configuration 	<properties>
+								<maven.compiler.source>17</maven.compiler.source>
+								<maven.compiler.target>17</maven.compiler.target>
+							</properties>
+
+** eclipse > project tab > build automatically.
+
+** update maven project:
+right click on project > maven > update project.
+
+** Problem tab > select Error item > right click > quick fix.
+
+** solve build path problem**
+close eclipse > delete .m2 > open eclipse > right click on project > maven > update project > check force release snapshot > ok. AND OR
+project > properties > java build path > Libraries > add jre, testng.
+project > properties > java compiler > select java version(installed one)
+
+** problem: org/testng/ITestListener has been compiled by a more recent version of the Java Runtime (class file version 55.0), only recognizes version up to 52
+Solution: Use an older version of TestNG than v7.6.0 if you want to use Java 8 as your development platform.
+
+**************************** Cucumber issues ****************************************************
+** featue file not colored
+Solution: 
+: install new software (Cucumber eclipse plugin) link: https://cucumber.github.io/cucumber-eclipse/update-site
+** Solution for all kind of problems
+: delete eclipse- go to user > delete (eclipse, .eclipse and .p2 files)
+: install latest version of eclipse > add dependencies(selenium-java, cucumber-java, cucumber-testNG, testNG etc.)
+: install plagins- Cucumber-eclipse, testng.
+
+
+************* Jenkins Problems *************************************************************************
+** jenkins problem: This site can’t be reached/localhost refused to connect.
+=== Analyze and Soluton: 
+===type Services at search bar > right click on Jenkins > properties > copy path then check 
+> click Jenkins > Jenkins.wrapper.log > copy java path > check it exists or not 
+> go Jenkins.xml and paste correct path > serviced > start Jenkins.
+
+* Problem : error: failed to parse poms java nio file nosuchfileexception
+* Solution : dashboard > manage Jenkins > Tools > specify the JDK and Maven path (not install automatically).
+to get correct path run in cmd [mvn -version]
+
+* Problem: 
+Jenkins can not connect git-
+Just add git path till bin to Jenkins Global tool configuration.
+
+** GitHub Problem(uploading project to github): can't connect github.com/Github.git... not authorized.
+Solution: Github > profile dropdown > setting > developer setting > personal access token 
+> generate new token > type anything note > select no expiration > check repo > generate token > copy token
+> use token instead of password for uploading project to github.
+> token is : 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 .
+
+** how to find element which goes to disappear ?
+Solution: element inspector > EventListener > blur > remove >remove > remove (for window, document, body). 
+then will not be disappear anymore.
+
+** how to fix broken Extent report in Jenkins ?
+Solution: manage jenkin > manage node and clouds > built in node > script console 
+> type= System.clearProperty("hudson.model.DirectoryBrowserSupport.CSP");
+	System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src *");
+
+** how to hide the projects in eclipse 
+= eclipse > click down arrow > select working set > new > Java > do name > add > finish. > select project to work. (other projects will be hidden.)
+> select project ok.
+= to unselect working set: down arrow > deselect working set.
+
+** how to import packages in java class.
+= first import any one clicking on red high lighted underline. then use * inplace of the word at the end.
+
+** problem- WARNING: You are using deprecated Main class...(in Cucumber as well) **************
+=Solution: right click on project > properties > TestNG > uncheck-Use Project TestNG jar.
+= for Cucumber: keep the original file and just modify it as you need.
+
+** add table to email
+: copy table > paste in word document > copy again > paste to email body.
+
+** : right click on mouse > inspect element > application > local/session/cookies storage>
+click on the link > click cross-circle icon
+
+*************************** newman and postman issues **************************************************************************
+** problem: newman' is not recognized as an internal or external command in jenkins
+Solution: 
+go to manage jenkins > plugins > install NodeJS 
+go to tools > Add NodeJS > name NodeJS > Global npm packages to install- type newman > Apply/Save
+go to Job > configure > Build Environment > Provide Node & npm bin/ folder to PATH > Apply/Save.
+now run your job.
+
+** problem: npm warn deprecated har-validator@5.1.5: this library is no longer supported (new man istallation issue)
+Solution:
+: install nvm then install node and npm using uvm then install newman.
+: google(download nvm for windows) then go to github page > scroll > click download (latest nvm version)
+: cdm > nvm -v (check nvm version)
+: cdm > nvm install lts (lts=long tertm support)
+: cdm > nvm use 22.11.0 (nvm use version number) then check node and npm version number
+: cdm > node -v)   and (cdm > nmp -v)
+: cdm > npm install -g newman (then check version (cdm > newman -v) if u can see version then its good. )
+if not then ...
+: cdm > npm install -g @vue/cli (then chck vue verson(cdm > vue -v) u can see vue version' then try to install newman again)
+: npm install -g newman
+

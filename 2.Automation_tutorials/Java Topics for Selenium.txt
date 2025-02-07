@@ -1,0 +1,56 @@
+ Java Topics for Tester
+
+1. Variables
+2. Default Variable Values
+3. Data Types
+4. Reference Data Type
+5. Methods , String Methods, Return Type
+6. String Vs StringBuffer Vs StringBuilder 
+7. Arrays
+8. Class 
+9. Getters-Setters And This Keyword
+10. Constructors
+11. Conditional Statement
+12. Switch Statement
+13. While Loop
+14. For Loops
+15. Static Keyword
+16. Inheritance
+17. Access Modifiers and Packages
+18. Abstract Class
+19. Interface
+20. Method Overloading
+21. Method Overriding
+22. Exceptions
+23. Reading Properties File
+24. Array List
+25. Linked List
+26. Sets
+27. Maps
+
+==============================================
+Understand Object Oriented Programming concepts ( Class and Object)
+Datatypes and variables with Type conversion and casting
+Methods
+Constructors
+Operators with more focus on Arithmetic and Logical operators
+Control statements – (Very important)
+Input output in Java
+Inheritance
+Overloading and overriding
+final, this and super
+Packages
+Access specifiers
+Access modifiers ( Static and Non-static)
+Abstract class
+Interface
+Exception handling ( Very Important)
+Wrapper classes
+String and operations on it. (Very Important)
+Arrays and operations on it. (Very important)
+Collections (Very very important)
+JDBC – Should know to connect any database
+Basics of regular expressions.
+Basics of Threads.
+Basics of Generics
+Basic of reflections.

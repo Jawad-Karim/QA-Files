@@ -1,0 +1,263 @@
+
+//*********************validate Response statusLine***********************
+
+	RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books"; 
+	
+	RequestSpecification httpRequest = RestAssured.given();
+	Response response = httpRequest.get("end point");
+
+	String statusLine = response.getStatusLine();
+	int statusCode = response.getStatusCode();
+ 	String string_response = response.asString();
+	String pretty_response = response.asPrettyString();
+
+
+//*********************validate Response headers************************
+		
+
+	String Header_contentType = response.header("Content-Type"); 
+	String Header_serverType = response.header("Server"); 
+	String Header_acceptLanguage = response.header("Content-Encoding"); 
+
+	Headers allHeaders = response.headers(); 
+	for(Header header : allHeaders) { 
+		System.out.println("Key: " + header.getName() + " Value: " + header.getValue()); 
+	}		
+					
+//***********************validate the response body****************************
+
+	Response response = httpRequest.get("/Hyderabad");
+	ResponseBody body = response.getBody();
+
+	String bodyAsString = body.asString();
+	String bodyStringLowerCase = body.asString.toLowerCase();
+
+	Assert.assertEquals(bodyAsString.toLowerCase().contains("hyderabad"), true, "Response body does not contain Hyderabad");
+
+
+//*******************use Query Parameters + validate body***********************
+
+	RestAssured.baseURI= "https://bookstore.toolsqa.com/BookStore/v1";
+	RequestSpecification httpRequest = RestAssured.given();
+
+	Response response = httpRequest.queryParam("ISBNO","9781449325862").get("/Book");
+
+	ResponseBody body = response.body();
+
+	String bodyString = body.asString();
+
+	JsonPath jpath = new JsonPath(bodyString);
+
+	String title = jpath.getString("title");
+	System.out.println("The book title is - "+title);
+					
+
+//*****************Extract a Node text from Response using JsonPath*******************
+
+
+	Response response = httpRequest.get("/Hyderabad");
+	JsonPath jsnPath = response.jsonPath();
+
+	String city = jsnPath.get("City");
+	String temperature = jsnPath.get("Temperature");
+	String humidity = jsnPath.get("Humidity"));
+	String weather = jsnPath.get("Weather"));
+	String windSpeed = jsnPath.get("WindSpeed"));
+
+
+//******************POST request method*************************
+	
+	RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books"; 
+	RequestSpecification request = RestAssured.given();
+
+	request.header("Content-Type", "application/json"); 
+
+	JSONObject json_object = new JSONObject(); 
+	json_object.put("userId", "TQ123"); 
+	json_object.put("isbn", "9781449325862"); 
+
+	request.body(json_object.toJSONString()); 
+
+	Response response = request.post("/BookStoreV1BooksPost"); 
+	System.out.println("The status received: " + response.statusLine());
+
+
+//************************PUT request Method*******************************
+	
+	String userId= "toolsqa_test"; 
+	String baseUrl="https://demoqa.com"; 
+	String token = "eyJhbGckpXVCJ9.eyJ1c2VyTmFtNjQyMjF9.lW8JJvJF7jKoIIMJQ4"; 
+	String isbn ="9781449325865";
+
+	@Test
+	public void updateBook()
+{
+
+		RestAssured.baseURI = baseUrl;
+		RequestSpecification httpRequest = RestAssured.given()
+				.header("Authorization", "Bearer " + token)
+				.header("Content-Type", "application/json");
+
+		Response res = httpRequest.body("{ \"isbn\" : \" "+isbn+" \", \"userId\" : \" "+userId+" \"}")
+				.put("/BookStore/v1/Book/9781449325862");
+
+		Assert.assertEquals(res.getStatusCode(),200);
+
+	}
+
+//**************************delete request Method******************************
+	
+		RestAssured.baseURI = baseUrl;
+		RequestSpecification httpRequest = RestAssured.given()
+				.header("Authorization", "Bearer " + token)
+				.header("Content-Type", "application/json");
+
+		Response res = httpRequest.body("{ \"isbn\" : \" "+isbn+" \", \"userId\" : \" "+userId+" \"}")
+				.delete("/BookStore/v1/Book");
+
+
+//********************Preemptive Authentication (basic Auth2)**********************
+	
+		RequestSpecification httpRequest = RestAssured.given().auth().preemptive().basic("postman", "password");
+
+		Response res = httpRequest.get("https://postman-echo.com/basic-auth");
+
+		ResponseBody body = res.body();
+
+		String rbdy = body.asString();
+		System.out.println("Data from the GET API- "+rbdy);
+	}
+
+
+
+
+
+=============================== specifically ============================
+
+//**************************** Create a request method ***********************
+
+	RestAssured.baseURI = "https://demoqa.com/BookStore/v1/Books"; 
+	
+	RequestSpecification httpRequest = RestAssured.given();
+	Response response = httpRequest.get("end point");
+
+
+//**************************** Request Header & Authentication *****************************
+
+		RequestSpecification httpRequest = RestAssured.given()
+						.header("Authorization", "Bearer " + token)
+						.header("Content-Type", "application/json");	
+		or
+		RequestSpecification httpRequest = RestAssured.given().auth().preemptive().basic("postman", "password");
+		or
+		Map requestHeaders = new HashMap<>();
+		requestHeaders.put("someHeader","somevalue");
+		RestAssured.given().headers(requestHeaders);
+
+
+//***************************** Request Query Params ***************[Query Params starts from ? mark in the url- example: ?ISBN=9781449325862]
+	RequestSpecification httpRequest = RestAssured.given()
+					.header("Authorization", "Bearer " + token)
+					.queryParam("ISBN","9781449325862")
+					.queryParam("BookID","978100062")
+					.get("/end_point");
+
+
+
+//****************************** request body *****************************************
+		String userId= "toolsqa_test"; 
+	String baseUrl="https://demoqa.com"; 
+	String token = "eyJhbGckpXVCJ9.eyJ1c2VyTmFtNjQyMjF9.lW8JJvJF7jKoIIMJQ4"; 
+	String isbn ="9781449325865";
+
+
+	RequestSpecification httpRequest = RestAssured.given()
+						.header("Authorization", "Bearer " + token)
+						.queryParam("ISBN", "9781449325862")
+						.body(Map/JSonObject/dataProvider/(POJO)). 	[body goes with POST/PUT request] 
+
+						JSONObject json_object = new JSONObject(); 
+						json_object.put("userId", "TQ123"); 
+						json_object.put("isbn", "9781449325862"); 						
+						.body(json_object.toJSONString());
+
+						Map<String, String> Data = new HashMap<>();
+						Data.put("key","value");
+						Data.put("key","value");
+						.body(Data)
+
+						.body("{ \"isbn\" : \" "+isbn+" \", \"userId\" : \" "+userId+" \"}")		
+
+						.post(/end point);
+
+
+
+//****************************** print Response data ******************************
+
+	Response response = httpRequest.get("/Hyderabad");
+
+	JsonPath jsnPath = response.jsonPath();	
+	JsonPath jsnPath = new JsonPath(response.body.asString);
+
+	String bodyStringLowerCase = response.body.asString.toLowerCase();
+	String city = jsnPath.get("City");
+	String temperature = jsnPath.get("Temperature");
+
+	String firstName = "data[4].first_name";
+	System.out.println("fistName : "+jsnPath.get(firstName));
+	System.out.println("fistName : "+jsnPath.get("data[4].first_name"));
+
+	String status = response.getStatusLine();
+	int statusCode = response.getStatusCode();
+	long responseTime = response.getTime();
+	String contentType = response.header("Content-Type");
+	String serverType = response.header("server");
+	String encoding = response.header("Content-Encoding");
+	String contentLength = response.header("Content-Length");
+
+	
+	
+
+	Headers allHeaders = response.headers(); 
+	for(Header header : allHeaders) { 
+		System.out.println("Key: " + header.getName() + " Value: " + header.getValue()); 
+	}	
+		long respTime = response.getTime();
+		System.out.println("status Code: "+response.getStatusCode());
+		System.out.println("status line: "+response.getStatusLine());
+		System.out.println("response time: "+respTime);
+		System.out.println("response body: "+response.body().asString());
+		System.out.println("content type: "+response.getHeader("content-type"));
+		System.out.println("content type: "+response.getContentType());
+	
+					
+//**************************** validate the response body *********************************
+
+			
+	Response response = httpRequest.get("/Hyderabad");
+	ResponseBody body = response.getBody();
+
+	String bodyAsString = body.asString();
+	String bodyStringLowerCase = body.asString.toLowerCase();
+
+	Assert.assertEquals(response.getStatusCode(), 200);
+	Assert.assertEquals(response.getStatusLine, "HTTP/1.1 200 OK");
+	Assert.assertTrue(response.getTime()<500) //mili seconds
+	Assert.assertEquals(bodyAsString.toLowerCase().contains("hyderabad"), true, "Response body does not contain Hyderabad");
+
+	.get("/endPonint")
+		.then()
+			.statusCode(200)
+			.body("data[1].id", equalTo(8))
+			.body("data[4].first_name", equalTo("George"))
+			.body("data.first_name", hasItems("George", "Rachel"));
+			.log().all(); 
+
+
+//************************** delete request Method ******************************
+	
+		RestAssured.baseURI = baseUrl;
+		RequestSpecification httpRequest = RestAssured.given()
+				.header("Authorization", "Bearer " + token);
+
+		Response res = httpRequest.delete("/BookStore/v1/Book");

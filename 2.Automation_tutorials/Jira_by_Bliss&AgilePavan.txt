@@ -1,0 +1,104 @@
+================= Jira Management With Bliss ===================
+: Introduction: Jira is a Agile management tool/defect management tool as well.
+
+: What is Scrum: Scrum is a framework based on Agile to 
+define, plan, develope and deliver a project.
+
+: what is the Structure of Scrum Team: 
+= Scrum has 3 roles: product owner, scrum master,  team(developers + QA).
+
+: What is Product Backlog and Sprint Backlog: 
+= Product backlog is a list of user stories defined by product owner at the begining of the project.
+= Sprint backlog- list of specific number of stories committed by dev/qa team in a sprint.
+= user story : A feater/module in a software. 5-15 user stories per sprint.
+
+: what is Scrum Ceremonies: 
+= it means sprint planning meeting, scrum meeting(daily stand up), sprint review, sprint Retrospection.
+
+: What are Epics, User Stories, Tasks and Bugs: 
+=Epics is a collection of huge work stories which can not be delivered in one sprint.
+should be devided into more sprints.
+=User stories are smaller requirements to cover just the information for work.
+=Tasks are the work required to get the story done.
+=Bugs are difference between expected result and actual result.
+
+: agile process- agile iterative and incremental development process. 
+  most of the time it has less documentation some time even no documentation at all.
+
+: Scrum- scrum is a framework following agile principles and process.
+
+: Scrum master- scrum master is like a supervisor for the scrum who handle the Scrum framework.
+
+: product backlog- contains list of all user stories, all requirments prepared by product owner. (product owner means software business owner).
+
+: sprint backlog- list of specific number of stories committed by dev/qa in a sprint.
+
+: scrum meeting- conducted by scrum master everyday for 15-20 minutes where we all discuss what we have done the day before, 
+  what we gonna do today and what's our plan for next day.
+
+: sprint planning meeting- a meeting at the begining of the project conducts with whole team 
+  to plan what are the stories need for development test during each sprint cycle.(decide how many stories+duration for each sprint)
+
+: sprint retrospective meeting: once after completed sprint. discuss what went well, what went wrong in that sprint.
+  owner, scrum master, dev/qa everybody should participate.
+
+: story point- rough estimation of user stories(estimated times for 1/more user stories). 
+  will be given by dev and qa in fibonaci series format (0,1,1,2,3,5,8,13)
+  1 story point = 1 hr/1 day(6 hrs)    * 20-25 story point per sprint.
+  1 story = 3 days(18 hrs)             * 4-6 stories per sprint.
+
+: Burndown chart- shows how much work is planned, how much work is completed, how much work is remaining in the sprint. maintained by the scrum master daily.
+
+: sprint review- all the test cases, srories, all tasks are completed or not ! Bug/defects are reviewed in sprint review.
+
+: artifact- what are the documents we have- product backlog, sprint backlog, Burndown chart.
+
+: ceremonies- sprint planning, scrum meeting, sprint review.
+
+: scrum board- contain stories. how many stories to do, in progress, in testing and done.
+
+: 
+
+1 How to Create a Project in Jira: 
+=click Create > select scrum > use tamplate > select a company manage project > do name.
+
+2 How to Create an Epic in Jira:
+= Active sprint > create > Epic > do name > summery > priority > select sprint.
+
+3 How to Create a User Story in Jira: 
+= Issue > create > select issue type(story) > summery > select label > select Epic > create.
+
+4 What are the Labels in Jira: 
+= Labels are kind of tasks you want to put on your issues..
+
+5 How to Create a Task in Jira:
+= issue > create > task > do name > create.
+
+6 How to Create a Bug in Jira:
+= issuee > create > Bug > do name > summery > selet label > select Epic > create.
+
+7 How to do Estimations in Jira - Adding Story Points
+
+8 How to Create a Sprint in Jira:
+= backlog > click create sprint > add stories(by dragging) > start sprint > write sprint goal > start.
+
+9 How to Configure a Scrum Board in Jira:
+= click(...) > board setting > do setting as requirement. column, priority, estimation etc..
+
+10 How to Complete a Sprint in Jira:
+= once all the issues been completed dragg & drop to done > click complete sprint.
+
+11. How to Create Filters in Jira: filters are used to save the list of issues based on criteria..
+= click Filters > search issues > type project name and label Name > search ... save the filter.
+
+12. How to Create a Dashboard in Jira: 
+= its a view of Jira project..click Dashboards > create dashboard > do name > 
+select access option > save
+add gadget > select filter, label > 
+
+13. What are Workflows in Jira and How to Edit Workflows in Jira:
+= project > project settings > workflows > edit > Software Simplified Worklow for Project xy 
+> edit icon > add a status > do name > descriotion > category..
+
+
+  

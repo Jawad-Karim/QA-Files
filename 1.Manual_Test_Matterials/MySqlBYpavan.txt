@@ -1,0 +1,44 @@
+: MySQL- PAVAN. (SDET- QA Automation)
+
+1) Download and Install MySQL
+ Download link :https://dev.mysql.com/downloads/
+ How To Install MySQL on Windows : https://bit.ly/3lF0mxj
+ 
+2) for database testing we need to have a database schema.
+Download MySQL Sample Database ( classicmodels)
+      Sample Database Download Link: https://bit.ly/3BzOF0h
+
+3) import downloaded database to MySQL workbench:
+=> Workbench > Server > data import > import from select self content file > select file > open.
+> select database in workbench > start import > refresh..
+
+4. start working : 
+=> use classicmodels(DB name)..(to connect the database I want to work on)
+=> describe information_schema  (to get the info about reference table)
+=> select tables; (to get the table names)
+=> select count(*) as numberOfColumns from information_schema.columns where table_name = 'customer';
+=> select column_name from information_schema.columns where table_name = 'customer';
+=> select column_name, data_type from information_schema.columns where table_name = 'customer';
+=> select column_name, column_type from information_schema.columns where table_name = 'customer';(to get the date_type with size by column_type)
+=> select column_name, column_key from information_schema.columns where table_name = 'customer';(to get the key_type)
+
+
+LinkedIN id : www.linkedin.com/in/jawad-karim-5a745a203
+
+What to test...
+#1) Transactions
+When testing Transactions it is important to make sure that they satisfy the ACID properties.
+
+#2) Database Schemas
+A Database Schema is nothing more than a formal definition of how the data is going to be organized inside a DB. To test it: 
+before that first we need to know the requirement- what is table name, columns name, data type, size of the column etc.
+these are available in the reference design document, so first we need to have it before conducting the test.
+
+#4) Stored Procedures
+Stored Procedures are more or less similar to user-defined functions. 
+These can be invoked by Call Procedure/Execute Procedure statements and the output is usually in the form of result sets.
+
+#5) Field Constraints
+The Default value, Unique value, and Foreign key:
+
+

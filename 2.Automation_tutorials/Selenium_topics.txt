@@ -1,0 +1,32 @@
+Selenium topics:
+1. basics: get, navigate, refresh, back, forward, findElement, 
+           sendKeys, clear, click/submit, boolean: isSelected, 
+	   isEnabled, isDisplayed. dropdowon.
+2. Dimension.
+3. Point.
+4. scroll.
+5. robot.
+6. select.
+7. checkBox/radioButton.
+8. bootstrap dropdowon.
+9. handle window
+10. handle frame
+11. alert
+12. action
+13. broken link
+14. database test
+15. cross browser test
+16. email
+17. extent report
+18. testNG reporter
+19. testNG listener
+20. file upload/download
+21. take screenshot
+22. keyword driven test
+23. Page object model
+24. retry test
+25. read object repo 
+26. Maven & Jenkins
+27. GIT
+28. Frame Work
+29. Calandar handling

@@ -1,0 +1,57 @@
+Rest Assured: Rest Assured is a Java library for testing RestFull web services.
+it is used to invoke Rest web services and check responses.
+can be used to test XML and Json based web services. 
+it supports POST, GET, PUT, DELETE, OPTIONS, PATCH and HEAD requests
+and can be used validate and verify the response of these requests.
+can be integrated with testing frameworks like JUnit, TestNG etc.
+Rest Assured is implemented in Groovy.
+
+Web Service : Service available over web (network).
+it provides a way to communicate between 2 machines/applications.
+difference between web application and web service...
+web application- communication between browser(user) and web server.
+web service - communication between service user(appliction) and web server (service provider).
+
+Json : (java script object notation) is a way of communicating with specific rules using Key-Value pairs.
+
+Json is built on 2 structures: Object and Array.
+(i) Object- A collection of name-value pairs.
+(ii) Arraay- An ordered list of values.
+
+Example: 
+{
+  Language:
+   [
+    { "name"    : "Java",
+      "version" : 9.0
+    },
+
+    {
+     "name"    : "python",
+     "version" : 3.0
+     }
+    ]
+
+ Tests:
+   [
+    { "name"    : "Automation",
+      "id" : 6
+    },
+
+    {
+     "name"    : "manual",
+     "id"      : 4
+     }
+    ]
+
+}
+
+Json Path: JasonPath is a query language for Jason, similar to XPATH for XML.
+json path helps to parse Json data. we can find the Jason path using JasonPathFinder.
+
+Json Schema are Jason documents that describes other Jason documents.
+Json Schema is a format defines the structure of a Jason message.
+it is used to validate a json message or API request & response in json format.
+
+
+

@@ -1,0 +1,100 @@
+GIT for Test Lead
+
+1) Create a new project in Eclipse.
+
+2) Create a local git repo: example - c/users/git/repoName
+(i) open GIT perspective - create new local git repo - 
+OR
+(ii) right click on project - Team - Share project (if earliar created a repo then it will popup, if not created then click on create)
+- check use/create in parent folder - select project - create repository.
+
+
+3) Add files to staging:
+right click on project - Team - Add to Index (will be added to staged area)
+
+4) Commit changed staged files to local git repo:
+right click on project - Team - commit - commit message - commit.
+
+5) Push changes to Master branch Remote Repo(GitHub).
+Login to GitHub - create new repo(+) - clone url - 
+in Eclipse - in Git - right clipse on repo project - remote - push - paste url - git uid/pass - next - select master branch - add spec - push.
+or right click on project - remote - push - paste url - git uid/pass - next select master branch - add spec - push.
+now project available in GitHub.
+
+
+6) add team member:
+select repo(in github) setting - collaborators - enter memeber name - add collaborator - copy invite link and share project link to the member.
+
+7) after work-done test engineer will send a pull request. I will see a notification on my github.
+click on notification > review 
+: if need more modification then - pull requests > click the committed message > hey, your code is good. please add one more check > comment.
+: if code looks good then - pull requests > click the committed message > hey, your code is good. please go ahead merge to master branch > comment. or lead can merge.
+
+
+
+Git for Team member:
+open the shared link on browser then can see project - copy project url.
+
+1) Clone Remote repo to local repo:
+Eclipse - Git - clone a git repository - paste project url - member uid/pass - next - master branch - next - finish. (it will be local repo).
+
+2) import project from local git repo to Eclicpse workspace:
+right click on packageExplorer - import - git - project from git -next - existing local repository - next - select project - next - import existing eclipse project -next - finish.
+
+3) Add/modify features/code/test cases: 
+do your work...modify or changes on this project.
+
+
+4) make a new branch : 
+in eclipse > git > git repo > right click on git repo/Branch(master) > switch to new Branch > do branch name > finish.
+
+5) Add files to staging: right click on project > team > add to index.
+
+6) Commit changes to new branch :
+right click on project in eclipse > team > commit > do message > commit. 
+
+7) Push new Branch to Github Repo :
+in Eclipse > git > right click on newly made Branch > push Branch > member uid/pass > push > member uid/pass > login > close.
+
+8) Pull Request(pr) to Lead for review the code:   (make sure-(base:master)--compare(modified branch))
+login to GitHub > click the project > select modified Branch > click new Pull Request > commit message > select reviewer > create pull request. 
+
+Commit message Example: hi, I have commited test2, please review and approve. thaks, jawad.
+
+9) see the responses from test lead: 
+: if he says new things to be done then complete it.
+: stage changes - right click on modified project > add to index
+: commit changes - right click on modified project > commit to(newly created branch) > message(added more checks) > commit.
+: right click on modified branch > push branch > preview > user/password > login > user/pass > push > close. (u can see github>project>new branch>src)
+: again make a pull request-- message(hi, I have added additional checks, please review and approve, best, Jawad)
+: see response from lead : if lead says to merge then- merge pull request > confirm merge
+
+10) How to see the project in GitHub:
+login GitHub > repositories > Branch > select Branch> src > test case
+
+11) how to see the conversations: slect project > pull requests > click on project > commits > click message icon.
+
+How to Merge project:
+
+
+: Problems- solutions:
+1. generate new token for password : Github > settings > developer settings > personal access token 
+> Generate new token > note(anything) > No expiration > repo > generate token.
+id: jawadkarim121@yahoo.com, pw: Password4git. TOKEN: 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
+id: arjundevnat@yahoo.com, pw: Password4github. TOKEN: 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
+
+Git work flow: 
+To upload: working directory => stage => local Git repo => GitHub.
+	=> git add (working directory to stage files).
+=> git commit(stage to local repo with message) 
+=> git push(local to GitHub).
+
+To download:
+=> git clone | git pull  (GitHub to working directory)
+=> git fetch (GitHub to local)
+=> git check out (local to working directory).
+=> git diff (to see code difference between working directory and stage).
+=> git diff HEAD (to see code difference between working directory and local).
+=> git merge  (to combine code between working directory and stage).
+
+

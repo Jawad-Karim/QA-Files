@@ -1,0 +1,16 @@
+Runtime complexity:
+1) for same type of operation complexity = O(1)	   : any number time of operation. its just size of the code.
+2) for same type execution cycle complexity = O(n) : any number time of execution
+
+char[] data = {'a', 'b', 'c', 'd'};
+		
+		for(int i=0; i<data.length; i++) { // one thing will happen again and again.
+			
+			System.out.println(data[i]); // O(n)
+		}
+1) O(1) : when a function has any number of constant(always same) instruction(operators) 
+and doesn't change execute cycle on input then time complexity will be O(1).
+
+2) O(n) : when a function will execute how many time depends on input the number then time complexity O(n).
+
+3) O(

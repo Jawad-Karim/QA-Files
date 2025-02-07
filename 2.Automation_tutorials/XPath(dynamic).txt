@@ -1,0 +1,69 @@
+********** XPATH Syntax ***************************************************
+: label-1. 
+//tagName[@attribute='value']
+//tagnNme[@attribute=’value’][index]
+//input[@id='Email']
+//*[@id='Email']
+//*[@id='Email'][@name='Email']
+//input[@id='Email' and @name='Email']
+//input[@id='Email' or @name='Email']
+//input[contains(@name,'Email')]
+//input[starts-with(@id,'Ema')]
+//*[text()='New look']
+//parentXpath space childXpath (//parentTag[@attribute='value'] //childTag[@attribute='value'])
+
+: label-2
+//*[@id='FirstName']/childTagName
+//*[@id='FirstName']/following::input  ................(following: Selects all elements of the current node)
+//*[@id='FirstName']/following::input[1]
+//*[@id='FirstName']/following::input[@type='text']
+
+//*[@type='submit']/preceding::input - .............(Preceding: Select all nodes that come before the current node)
+//*[@type='submit']/preceding::input[1]
+//*[@id='LastName']/preceding::input[@type='text']
+//*[@type='submit']/precing-sibling::input   ........(it will find the element before the current node)
+//*[@type='submit']/following-sibling::input   ........(it will find the element after the current node)
+//a[@href=’’]/ preceding::a[1]
+//*[text()='Enterprise']/ancestor::div[1] .............(selects all ancestors element (grandparent, parent etc.) of the current node)
+//*[@id='rt-feature']/descendant::a[1]          .......(Selects the descendants(childs, grand childs) of the current node)
+//*[@id='rt-feature']/parent::div[1]    ...............(Selects the parent of the current node)
+//*[@type='password']/self::input    ..................(Selects the current node or ‘self’)
+//*[@id='java_technologies']/child::li[1]        ......(Selects all children elements of the current node)
+
+//tagname
+//parentTagname/childTagname
+
+//header/div/button[1]/following-sibling::button[1]
+//header/div/button[1]/parent::div
+/html/body/table/tbody/tr/td/table/tbody/tr[5]/td[2]/input[2]
+/html/body/div[10]/div[3]/div[3]/div/div[2]/div/ul[1]/li[1]/a/span
+
+
+*************** CSS Selector- Synax *******************************************************
+
+example node : <input type="text" placeholder="Username" id= “inputUsername”  class='form-control'>
+
+* tagName[attribute_name = ‘attribute_value’] 
+* Parent_locator > child_locator
+* Parent CSS locator > Child HTML tag : nth-of-type(index) [for child element]
+
+: input[placeholder='Username'] OR
+: input#UserName		OR
+: input.UserName
+
+//Combine multiple Attributes to create a CSS Selector
+: input#UserName[class='form-control']
+: input.UserName[class='form-control']
+
+//Locate dynamic CSS Selector
+: div>input[placeholder='Username']
+: div[placeholder='Username']>input:nth-of-type(2)
+: input[placeholder^='Usern']	[using value starts-with]
+: input[placeholder$='ame']	[using value ends-with]
+: input[placeholder*='nam']	[using value contains-with]
+
+: Parenttagname childtagname
+: tagname
+
+
+

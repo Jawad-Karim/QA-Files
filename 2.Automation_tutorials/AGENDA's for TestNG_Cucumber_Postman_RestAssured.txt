@@ -1,0 +1,106 @@
+TestNG frame-work			temporary data guru99bank Customer ID	27504
+----------------------------------------------------------------------------------------
+Agenda: 
+Create maven Project
+add dependencies: selenium-java, testNG, apache poi, poi-ooxml, javafaker, commons-lang3, lombok, extentreports, maven surefire, maven-compiler-plugins.
+2. Create packages: page_Objects, test_cases, utility, listener packages.
+3. Create folders: reports, sceenshots, test-data folder(config.properties, testData.properties, XL_testData).
+4. Create xmlFile folders: testng.xml, pom.xml file.
+5. Execute tests: using testng.xml, pom.xml, cmd, and Jenkins
+parameterized test, groups, dataProvider annotation, helper attributes(priority, enabled=false, alwaysRun=true), 
+parallel test with testng.xml, testng listeners. Exclude/include.
+6. Store the code to github repo and execute thru Jenkins using github.
+7. Set the validations.
+
+
+Design Selenium Framework from Scratch
+-----------------------------------------------------------------------------------------------
+: Create Maven Structured Framework with all necessary Automation dependencies
+: Select Sample Ecommerce Application to Automate the end-to-end flow
+: Implement Page object Model mechanism to drive the locators from respective classes
+: Drive object creation within Page object classes encapsulating it from Tests
+: Create Base Test which sets browser configuration details and Global properties
+: Decide the Test Strategy, how tests should be clubbed & distributed with appropriate annotations
+: Create TestNG runner file to trigger the tests with one Single point of execution control
+: Introduce Grouping in TestNG.xml to categorize tests with different tags of execution
+: Implement Data driven testing & Parameterization using TestNG Data provider HashMap & Json File readers
+: Implement TestNG Listeners to capture Screenshot on automatic test-failures and logging 
+: Create Extent Report wrapper to generate excellent HTML reports for the application
+: Make Framework necessary changes to support parallel execution with Thread safe mechanism
+: Implement TestNG retry mechanism to rerun the failed flaky tests in the application
+: Run the Framework tests with Maven commands with TestNG Maven integration plugin
+: Implement Maven Run time variables to replace global parameters of test data at run time
+: Integrate the Framework with Jenkins with Parameterized Build Pipeline Jobs & Schedule the jobs on specific time frames
+: Add Cucumber Wrapper to existing framework with Cucumber TestNG Runner
+
+
+Cucumber-BDD frame-work
+------------------------------------------------------------------------------------------
+Agenda: 
+: Create maven Project
+add dependencies: selenium-java, cucumber-java, testng, cucumber-testng, junit, cucumber-junit, 
+apache poi, poi-ooxml, commons-lang3, lombok, javafaker, extentreports, extentreports-cucumber7-adapter.
+
+Create Feature Files with- Background, senario outline, Examples, Data table, tags.
+Create Step Definitions class, Hook class
+Create Test Runner classes using testNG / Junit.
+5. Create packages: page_Objects, test_cases, utility, listener packages.
+6. Create folders: reports, sceenshots, config-data folder
+7. Execute tests: using testng.xml, pom.xml, cmd, and Jenkins with table-data, excel-data.
+8. Store the code to github repo and execute thru Jenkins using github.
+9. Set the validations.
+
+
+Cucumber Selenium Framework from Scratch
+-----------------------------------------------------------------------------------------------
+• Build Maven Project with all the framework dependencies
+Develop End to end Selenium Web Scenarios in the feature file
+• Understand the Single responsibility principle to distribute the implementation into multiple Step definitions.
+• Implement TestNG /Junit Runner to run the framework
+• Importance of Dependency injection to share the data between the Steps file
+• Understand the Page object Pattern to drive the locators from page files
+• Implement Factory Design pattern by writing PageObject Manager class to create objects of all PO classes
+• How driver can be configured and distributed across the files in the framework
+• How to run Cucumber Scenarios in Parallel Mode using Cucumber TestNG Runner
+• Build Test utilities for reusable Selenium methods
+• Implement Cucumber Hooks to capture Screenshots on test failures
+• Implement Cucumber Tags to run selected tests in the framework
+• Parameterizing the test data to run the Scenarios with multiple data sets
+• Creating HTML & Extent reports to run Cucumber Selenium tests
+• Running tests in parallel mode and generate Extent reports with screenshots attached for failed
+• Running tests in parallel mode and generate Extent reports with screenshots attached for failed Scenarios
+• Run the cucumber tests using Maven & Command line options
+• Integrate the Framework to CI/CD Jenkins and Schedule the Jobs on regular time Interval
+• Create Parameterized Jenkin job to dynamically send the global properties at run time of Job execution
+
+
+Postman practice:
+----------------------------------------------------------------------------------------------
+Agenda: 
+Create Workspace
+Create Collection
+Create Test Folders
+Create Requests
+Documentation
+Execute a Request
+Run Collection (data driven with csv or JSON)
+Schedule run collection using postman monitor
+Create Environment (beta, test, staging environment) variables. Get data from body & store into environment.
+Create random data and store into Enviroment
+Validate response status code+message, response time, header(content type, content encoding, content length, server), data type and data.
+Validate Authentication, schema
+Data driven test
+Export collection
+Run collection using Newman
+Run collection using Jenkins
+Create GitHub repo
+Run  collection using Jenkins from GitHub repo
+
+gitlab access token for petStore: glpat-WodCg_ZVrgtV6N_Bsg5c (token name: PestStoreToken)
+
+
+RestAssured Agendas
+-------------------------------------------------------------------------------------------------
+Create a maven project (dependencies: selenium-java, testng, rest-assured, rest-assured-all(for java 9+), jsonPath, xmlPath, json-schema validator)
+Create request (Create, Post, Put, Delete)
+validate response status code+message, response time, response body, Authentication.

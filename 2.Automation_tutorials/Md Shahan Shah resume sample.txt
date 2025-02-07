@@ -1,0 +1,33 @@
+I was not able to upload word and pdf format. 
+that's why I uploaded note pad document's with
+just the key points....
+
+
+Md shahan Shah 
+----------------
+
+
+Technical Skills :
+
+JAVA,GUI Testing, Agile,Selenium, API Testing,	 
+TentNG, Maven, Rest Assured, Test Planning
+Jenkins, MySQL,SQL Server,
+Test Automation, GitHub,ALM, 	 
+Automation Framework, Extent Reports,	 
+JIRA, DD Framework (Cucumber)
+SDLC, STLC.
+
+Experiences: 
+
+1) Otsuka Pharmaceutical - Rockville, MD				OCTOBER 2019 – PRESENT
+QA Automation Engineer
+
+2) T-Mobile USA Inc. (Telecommunications) Atlanta, GA                    April  2017 – June 2019
+QA Engineer
+
+3) Hyland Software Inc. - Westlake, OH	
+Application Test Analyst
+
+4) Client Network Service Inc. - Rockville, MD			May 2014 – June 2015
+QA Analyst
+

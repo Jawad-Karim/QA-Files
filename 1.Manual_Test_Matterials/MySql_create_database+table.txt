@@ -1,0 +1,18 @@
+MySql:
+
+Go to commandline- 
+select user(); to see userName.
+show variables where variable_name='port';
+show variables where variable_name='hostname';
+
+userName : root@localhost
+hostName : DESKTOP-QRB56CU
+port no : 3306.
+
+1. how to create databse ?
+A: i) click on 'create new schema button'-name the database-apply.
+   ii) execute query- CREATE DATABASE name;
+
+2. how to create table ?
+A: i) right click on databse-'create table'-name the table-apply.
+   ii) execute query- create table name;

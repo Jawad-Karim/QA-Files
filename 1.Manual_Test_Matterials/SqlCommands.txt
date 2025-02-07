@@ -1,0 +1,138 @@
+SQL COMMANDS
+===============
+=> SELECT column name FROM table name;
+
+=> SELECT * FROM Customer;
+
+=> SELECT  name FROM Customer;
+
+=> SHOW DATABASE;
+
+=> SELECT id, name, city FROM Customer;
+
+=> SELECT state FROM Customer;
+
+=> SELECT DISTINCT state FROM Customer; (shows 1 item from same name).
+
+=> SELECT id, name, city FROM Customer 5; (shows 0 to 5 rows).
+
+=> SELECT id, name, city FROM Customer 0, 2 ; (shows 0 to 2 rows).
+
+=> SELECT id, name, city FROM Customer 10, 15;  (shows 10 to 15 rows).
+
+=> SELECT id, name, address FROM Customer ORDER BY id;
+
+=> SELECT id, name, city FROM Customer ORDER BY id DESC LIMIT 10, 10;
+
+=> SELECT id, name, city FROM Customer WHERE id = 54;
+
+=> SELECT id, name, address FROM Customer WHERE id < 8;
+
+=> SELECT id, name, address FROM Customer WHERE id < = 8;
+
+=> SELECT id, name, address FROM Customer WHERE id ! = 54; ( ! means not)
+
+=> SELECT id, name, address FROM Customer WHERE id  BETWEEN 10 AND 20;
+
+=> SELECT name, city, state FROM Customer WHERE state = 'CA';
+
+=> SELECT name, city, state FROM Customer WHERE state = 'CA' AND city = 'HOLLAND';
+
+=> SELECT id, name, city, state FROM Customer WHERE id = 1 or id = 2 AND city = 'HAMTRAMCK';
+
+=> SELECT name, city, state FROM Customer WHERE state in ('CA' , 'NC' , 'NY');
+
+=> SELECT name,  FROM Customer WHERE name LIKE 'new%'; (means starts with new then anything)
+
+=> SELECT name,  FROM Customer WHERE name LIKE '% computer %'; ( % means anything)
+
+=> SELECT name,  FROM Customer WHERE name LIKE 'c % r';
+
+=> SELECT name,  FROM Customer WHERE name LIKE '_ boxes of dogs'; ( _ means single numeric value).
+
+=> SELECT name,  FROM Customer WHERE name LIKE '% boxes of dogs';
+
+=> SELECT name,  FROM Customer WHERE name REGEXP 'boxes'; (will show the datas which contais the word  boxes)
+
+=> SELECT name,  FROM Customer WHERE name REGEXP 'new%';
+
+=> SELECT name,  FROM Customer WHERE name REGEXP 'gold | car'; ( means gold or car)
+
+=> SELECT name,  FROM Customer WHERE name REGEXP '[12345] boxes of dogs'; ( shows only the datas which contains the numbers like 1,2,3,4,5)
+
+=> SELECT name,  FROM Customer WHERE name REGEXP '[0-9] boxes of dogs';  ( shows only the datas which contains the numbers like 0,1,2,3,4,5,6,7,8,9,)
+
+=> SELECT name,  FROM Customer WHERE name REGEXP '[ ^ 12345] boxes of dogs'; ( ^ means not this numbers)
+
+=> SELECT CONCAT (city, state) FROM Customer ;
+
+=> SELECT CONCAT (city, state) as new-table FROM Customer ; (will create new column 'new-table')
+
+=> SELECT name , cost FROM items;
+
+ => SELECT name , cost , cost - 10 FROM items; ( means cost minus 10)
+
+=> SELECT name , cost , cost - 10 AS Sale-Price FROM items; (will create new column 'Sale-Price').
+
+=> SELECT name UPPER (name) FROM items; (will change to upper case names)
+
+=> SELECT name UPPER (name) AS new-name FROM items; (will create new column 'new-name').
+
+=> SELECT AVG (cost) FROM items; ( will show average price).
+
+=> SELECT SUM (cost) FROM items; ( will show total price).
+
+=> SELECT COUNT (*) FROM items; ( will show total number of rows).
+
+=> SELECT COUNT (*) FROM items WHERE id = 6 ; ( will show total number of rows for id = 6).
+
+=> SELECT MAX (cost) , AVG (cost) FROM items WHERE id = 12;
+
+=> SELECT seller-id COUNT (*) FROM items GROUP BY id ;
+
+=> SELECT seller-id COUNT (*) FROM items GROUP BY id HAVING COUNT (*) >= 3;
+
+=> SELECT id FROM items WHERE name LIKE 'new %' ;
+
+=> SELECT id, MIN (cost)  FROM Customer WHERE name LIKE 'new %'  AND id IN (3,4,8);
+
+=> SELECT Customet.id, Customer.name, items.name, items.cost FROM Customer, items 
+     WHERE Customer.id = Seller_id ORDER BY Customer.id ;      ( will show those datas which are only in both table)
+
+=> SELECT c.name , i.name FROM Customer AS c , items AS i WHERE c.id = i.seller_id;
+
+=> SELECT Customer.name , items.name FROM Customer LEFT OUTER JOIN items ON Customer.id = items.seller-id; ( will show only as many rows as in left column)
+
+=> SELECT Customer.name , items.name FROM Customer RIGHT OUTER JOIN items ON Customer.id = items.seller-id; ( will show only as many rows as in RIGHT column)
+
+=> SELECT id, name, cost FROM Customer WHERE bids > 190;
+
+=> SELECT id, name, cost FROM Customer WHERE bids > 190 AND bids < 900;
+
+=> INSERT INTO items VALUES (101`, jamal, 450, 6 ); ( will add a new row in items table)
+
+=> INSERT INTO items (id, name, cost, bids) VALUES (101`, jamal, 450, 6 );
+
+=> INSERT INTO (id, name, cost, bids) VALUES (101`, jamal, 450, 6 );
+
+=> INSERT INTO items (id, name, cost, bids) VALUES (101`, jamal, 450, 6 ), (102`, kamal, 750, 8 ) ( will add 2 new rows in items table) as many time.
+
+=> UPDAE items SET name = 'jamal' , cost = 750 , bids = 9 WHERE id =106;
+
+=> DELETE FROM items WHERE id = 106; ( will delete the row)
+
+=> CREATE TABLE user (
+id INT  NOT NULL AUTO-INCREMENT,       (AUTO-INCREMENT only in PRIMARY KEY)
+name VARCHAR (50),
+password VARCHAR (20), 
+PRIMARY KEY (id)
+);
+
+=> ALTER TABLE user ADD any column name VARCHAR (30); (will add a new column)
+
+=> ALTER TABLE user DROP  any column name VARCHAR (30); (will delete a new column)
+
+=> DROP TABLE usrer; (will delete user table)
+
+
+=> RENAME TABLE usrer TO user 2; ( will rename the Table)

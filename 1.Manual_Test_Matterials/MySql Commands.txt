@@ -1,0 +1,199 @@
+===================== MySQL by Testing world ======================
+
+//to see database table structure(columns, dataType, size)
+Describe tableName;
+
+//to see all meta data/columns info from schema.
+Describe information_schema.columns ; 
+
+//to connect databaseName/to start work on a database.
+USE classicModels;  
+
+//to see the tables in database;
+SHOW TABLES ;  
+  
+SELECT column_name from information_schema.columns where table_name = 'products';
+// to see the total number of columns.
+SELECT count(*) AS numberOFcolumns FROM information_schema.columns WHERE table_name = ‘Customers’; 
+// to see the names of the columns.
+SELECT column_name FROM information_schema.columns WHERE table_name = ‘Customers’; 
+//to see column names + dataType of the columns.
+SELECT column_name, data_type FROM information_schema.columns WHERE table_name = ‘Customers’; 
+//to see column names + dataSize of the columns.
+SELECT column_name, column_type FROM information_schema.columns WHERE table_name = ‘Customers’; 
+//to see column names null or NOT of the columns.
+SELECT column_name, is_nullable FROM information_schema.columns WHERE table_name = ‘Customers’; 
+
+
+---------------------------------------------------------
+
+SELECT * FROM Customers WHERE Country = 'Germany' AND City = 'Berlin';
+
+SELECT * FROM Customers WHERE City = 'Berlin' OR City = 'Santa';
+
+SELECT * FROM Customers WHERE Country = 'Germany' OR Country = 'Spain';
+
+SELECT * FROM Customers WHERE NOT Country = 'Germany';
+
+SELECT * FROM Customers WHERE Country = 'Germany' AND (City = 'Berlin' OR City = 'Stuttgart');
+
+SELECT * FROM Customers WHERE NOT Country = 'Germany' AND NOT Country = 'USA';
+
+SELECT * FROM Customers ORDER BY Country;
+
+SELECT * FROM Customers ORDER BY Country ASC|DESC;
+
+INSERT INTO Customers (CustomerName, ContactName, Address) VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21');
+
+INSERT INTO Customers VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL;
+
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NOT NULL;
+
+UPDATE Customers SET ContactName = 'Alfred', City = 'Frankfurt' WHERE CustomerID = 1;
+
+SELECT * FROM Customers LIMIT 3;
+
+SELECT * FROM Customers WHERE Country='Germany' LIMIT 3;
+
+SELECT MIN(Price) AS SmallestPrice FROM Products;
+
+SELECT MAX(Price) AS LargestPrice FROM Products;
+
+SELECT COUNT(ProductID) FROM Products;   : will count total raws.
+
+SELECT AVG(Price) FROM Products;
+
+SELECT SUM(Quantity) FROM OrderDetails;
+
+SELECT * FROM Customers WHERE CustomerName LIKE 'a%'; (% means anything)
+
+SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+
+SELECT * FROM Customers WHERE CustomerName LIKE '%or%';
+
+SELECT * FROM Customers WHERE CustomerName LIKE '_r%'; ( _ means single digit length)
+
+SELECT * FROM Customers WHERE CustomerName LIKE 'a__%';
+
+SELECT * FROM Customers WHERE ContactName LIKE 'a%o';
+
+SELECT * FROM Customers WHERE CustomerName NOT LIKE 'a%';
+
+SELECT * FROM Customers WHERE City LIKE 'L_n_on';
+
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers);
+
+SELECT * FROM Products WHERE Price NOT BETWEEN 10 AND 20;
+
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20 AND CategoryID NOT IN (1,2,3);
+
+SELECT * FROM Products WHERE ProductName BETWEEN 'Carnarvon' AND 'Mozzarella' ORDER BY ProductName;
+
+SELECT * FROM Orders WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+SELECT CustomerID AS ID, CustomerName AS Customer FROM Customers;
+
+SELECT CONCAT(Address,',', PostalCode, City, Country) AS Address FROM Customers;  	: to add a comma use  ','
+
+select Orders.OrderDate, Customers.CustomerName from Orders, Customers where Orders.CustomerID = Customers.CustomerID
+
+SELECT Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+SELECT Customers.CustomerName, Orders.OrderDate FROM Customers LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+SELECT Orders.OrderID, Employees.LastName FROM Orders RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID;
+
+SELECT Customers.CustomerName, Orders.OrderID FROM Customers CROSS JOIN Orders;
+
+SELECT Customers.CustomerName, Orders.OrderID FROM Customers CROSS JOIN Orders WHERE Customers.CustomerID=Orders.CustomerID;
+
+SELECT CustomerName,City FROM Customers , Orders WHERE Customers.CustomerID <> Orders.CustomerID; (<> means !=) (self join)
+
+SELECT City FROM Customers UNION SELECT City FROM Suppliers	: selects only distinct values
+
+SELECT City FROM Customers UNION ALL SELECT City FROM Suppliers	: selects only all values
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country;
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5;
+
+SELECT SupplierName FROM Suppliers WHERE EXISTS (SELECT ProductName FROM Products WHERE Price < 20);
+
+SELECT ProductName FROM Products WHERE ProductID = ANY(SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+
+SELECT ALL ProductName FROM Products WHERE TRUE;
+
+SELECT ProductName FROM Products WHERE ProductID = ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+
+INSERT INTO Customers (CustomerName, City, Country) SELECT SupplierName, City, Country FROM Suppliers;
+
+SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+    WHEN Quantity = 30 THEN 'The quantity is 30'
+    ELSE 'The quantity is under 30'
+END AS QuantityText
+FROM OrderDetails;
+
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    	WHEN City IS NULL 
+	THEN Country
+    	ELSE City
+END);
+
+
+-- Select all:  for coment
+SELECT * FROM Customers;
+SELECT * FROM Customers -- WHERE City='Berlin';
+
+MySQL Arithmetic Operators
+
++	Add	
+-	Subtract	
+*	Multiply	
+/	Divide	
+%	Modulo
+
+MySQL Bitwise Operators
+&	Bitwise AND
+|	Bitwise OR
+^	Bitwise exclusive OR
+
+MySQL Comparison Operators
+=	Equal to	
+>	Greater than	
+<	Less than	
+>=	Greater than or equal to	
+<=	Less than or equal to	
+<>	Not equal to
++=	Add equals
+-=	Subtract equals
+*=	Multiply equals
+/=	Divide equals
+%=	Modulo equals
+&=	Bitwise AND equals
+^-=	Bitwise exclusive equals
+|*=	Bitwise OR equals
+
+MySQL Logical Operators
+
+ALL	TRUE if all of the subquery values meet the condition	
+AND	TRUE if all the conditions separated by AND is TRUE	
+ANY	TRUE if any of the subquery values meet the condition	
+BETWEEN	TRUE if the operand is within the range of comparisons	
+EXISTS	TRUE if the subquery returns one or more records	
+IN	TRUE if the operand is equal to one of a list of expressions	
+LIKE	TRUE if the operand matches a pattern	
+NOT	Displays a record if the condition(s) is NOT TRUE	
+OR	TRUE if any of the conditions separated by OR is TRUE	
+SOME	TRUE if any of the subquery values meet the condition
+

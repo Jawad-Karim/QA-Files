@@ -1,0 +1,4 @@
+endPoint,userTitle,fName,lName,userEmail
+api/users,developer,Robin,joese,ashd@gmail.com
+api/users,manager,iron,kally,asdf@gmail.com
+api/users/qa,qa,sejan,tom,ashs@gmail.com
