@@ -85,10 +85,10 @@ xmlFiles(testng.xml)
 packages
 ------------------------------------
 apis	  (classes- CreateUserApi, RetrieveUserApi, UpdateUserApi, DeleteUserApi)
+testBase  (classes- TestBase)
 listeners (classes- class MyListeners extends TestBase implements ITestListener...)
 pojos 	  (Classes- UserPojo, AddressPojo...)
 utils 	  (ExcelReader, ConfigDataReader, TestDataProvider, ExtentReportManager, ScreenshotTaker)
-testBase  (classes- TestBase)
 
 :src/main/resources
 -------------------------
