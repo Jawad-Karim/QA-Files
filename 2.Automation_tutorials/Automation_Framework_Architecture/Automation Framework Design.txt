@@ -18,7 +18,7 @@ listeners (classes- MyListeners implements ITestListener, MyRetry implements IRe
 :src/test/java
 packages
 -------------------------------------
-testBase  (classes- Base)
+testBase  (classes- Base (set up ExtentReports, Property object etc.)
 testCases (classes- HomePageTest, RegisterPageTest, LoginPageTest, AccountPageTest, AccountSuccessPageTest, SearchPageTest)
 
 
@@ -85,7 +85,7 @@ xmlFiles(testng.xml)
 packages
 ------------------------------------
 apis	  (classes- CreateUserApi, RetrieveUserApi, UpdateUserApi, DeleteUserApi)
-testBase  (classes- TestBase)
+testBase  (classes- Base (set up ExtentReports, Property object etc.)
 listeners (classes- class MyListeners extends TestBase implements ITestListener...)
 pojos 	  (Classes- UserPojo, AddressPojo...)
 utils 	  (ExcelReader, ConfigDataReader, TestDataProvider, ExtentReportManager, ScreenshotTaker)
