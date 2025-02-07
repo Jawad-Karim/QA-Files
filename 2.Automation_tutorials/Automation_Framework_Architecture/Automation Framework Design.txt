@@ -70,7 +70,6 @@ features- Login.feature, Register.feature, Search.feature
 
 :folders under project-
 -------------------------------------------------------------
-screenshots
 reports
 xmlFiles(testng.xml)
 
